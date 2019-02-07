@@ -18,6 +18,7 @@ func main() {
 	case "rest":
 		router := mux.NewRouter()
 		router.HandleFunc("/people", actions.GetPeople).Methods("GET")
+		router.HandleFunc("/people/{id}", actions.GetPerson).Methods("GET")
 		log.Fatal(http.ListenAndServe(":8000", router))
 	case "grpc":
 		log.Println("Starting gRPC Server")

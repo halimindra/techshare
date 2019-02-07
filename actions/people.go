@@ -2,28 +2,30 @@ package actions
 
 import (
 	"encoding/json"
+	"log"
 	"net/http"
 	"strconv"
 
-	"orami.com/techshare/models"
+	"github.com/gorilla/mux"
+	"orami.com/techshare/repository"
 )
 
-func GetPeople(w http.ResponseWriter, r *http.Request) {
-	people := []models.Person{}
+func GetPerson(w http.ResponseWriter, r *http.Request) {
+	params := mux.Vars(r)
 
-	for i := 1; i <= 1000000; i++ {
-		people = append(
-			people,
-			models.Person{
-				ID:   i,
-				Name: "Person " + strconv.Itoa(i),
-				Address: &models.Address{
-					City:    "Jakarta",
-					Country: "Indonesia",
-				},
-			},
-		)
+	var id int
+	id, err := strconv.Atoi(params["id"])
+	if err != nil {
+		log.Fatal("Invalid ID")
 	}
 
+	pr := repository.NewPeople()
+	person := pr.FindByID(id)
+	json.NewEncoder(w).Encode(person)
+}
+
+func GetPeople(w http.ResponseWriter, r *http.Request) {
+	pr := repository.NewPeople()
+	people := pr.FindAll(1000000)
 	json.NewEncoder(w).Encode(people)
 }
