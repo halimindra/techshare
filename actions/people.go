@@ -11,7 +11,7 @@ import (
 func GetPeople(w http.ResponseWriter, r *http.Request) {
 	people := []models.Person{}
 
-	for i := 1; i <= 10000; i++ {
+	for i := 1; i <= 1000000; i++ {
 		people = append(
 			people,
 			models.Person{
