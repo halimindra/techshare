@@ -29,11 +29,8 @@ protoc -I.  --go_out=plugins=grpc:../pkg tech_share.proto
 
 ## Running Server
 ```
-go run main.go -mode=<mode> -port=<optional>
+go run main.go -mode=<rest or grpc> -port=<optional>
 ```
-Available options
--mode: rest, grpc
--port: <port number>
 
 ###  Sample Run REST server
 ```

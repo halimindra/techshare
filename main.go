@@ -15,7 +15,7 @@ import (
 )
 
 var (
-	mode = flag.String("mode", "rest", "Server mode, options: rest, grpc")
+	mode = flag.String("mode", "grpc", "Server mode, options: rest, grpc")
 	port = flag.Int("port", 10000, "The server port")
 )
 
