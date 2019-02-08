@@ -1,3 +1,7 @@
+# Techshare
+Sample Project with REST API and gRPC server
+
+
 ## Installation
 ### Install protoc compiler
 download from https://github.com/protocolbuffers/protobuf/releases
