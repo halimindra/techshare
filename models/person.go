@@ -1,7 +1,7 @@
 package models
 
 type Person struct {
-	ID      int      `json:"id,omitempty"`
+	ID      int64    `json:"id,omitempty"`
 	Name    string   `json:"name,omitempty"`
 	Address *Address `json:"address,omitempty"`
 }

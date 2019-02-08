@@ -3,16 +3,16 @@ syntax = "proto3";
 package sdk;
 
 service TechShare {
-    rpc GetPerson(PeopleRequest) returns (Person) {}
+    rpc GetPerson(PersonRequest) returns (Person) {}
     rpc ListPeople(PeopleRequest) returns (stream PeopleResponse) {}
 }
 
 message PersonRequest {
-    int32 id = 1;
+    int64 id = 1;
 }
 
 message PeopleRequest {
-    int32 limit = 1;
+    int64 limit = 1;
 }
 
 message PeopleResponse {
@@ -20,7 +20,7 @@ message PeopleResponse {
 }
 
 message Person {
-    int32 id = 1;
+    int64 id = 1;
     string name = 2;
     Address address = 3;
 }

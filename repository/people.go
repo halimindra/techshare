@@ -13,26 +13,26 @@ func NewPeople() People {
 	return People{}
 }
 
-func (p *People) FindByID(id int) models.Person {
+func (p *People) FindByID(id int64) (models.Person, error) {
 	person := models.Person{
 		ID:   id,
-		Name: "Person " + strconv.Itoa(id),
+		Name: "Person " + strconv.Itoa(int(id)),
 		Address: &models.Address{
 			City:    "Jakarta",
 			Country: "Indonesia",
 		},
 	}
-	return person
+	return person, nil
 }
 
-func (p *People) FindAll(limit int) []models.Person {
+func (p *People) FindAll(limit int64) ([]models.Person, error) {
 	people := []models.Person{}
 
-	for i := 1; i <= limit; i++ {
+	for i := 1; i <= int(limit); i++ {
 		people = append(
 			people,
 			models.Person{
-				ID:   i,
+				ID:   int64(i),
 				Name: "Person " + strconv.Itoa(i),
 				Address: &models.Address{
 					City:    "Jakarta",
@@ -41,5 +41,5 @@ func (p *People) FindAll(limit int) []models.Person {
 			},
 		)
 	}
-	return people
+	return people, nil
 }

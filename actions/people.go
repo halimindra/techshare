@@ -20,12 +20,20 @@ func GetPerson(w http.ResponseWriter, r *http.Request) {
 	}
 
 	pr := repository.NewPeople()
-	person := pr.FindByID(id)
+	person, err := pr.FindByID(int64(id))
+	if err != nil {
+		log.Print(err)
+	}
+
 	json.NewEncoder(w).Encode(person)
 }
 
 func GetPeople(w http.ResponseWriter, r *http.Request) {
 	pr := repository.NewPeople()
-	people := pr.FindAll(1000000)
+	people, err := pr.FindAll(1000000)
+	if err != nil {
+		log.Print(err)
+	}
+
 	json.NewEncoder(w).Encode(people)
 }
