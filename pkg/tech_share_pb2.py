@@ -16,10 +16,10 @@ _sym_db = _symbol_database.Default()
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='tech_share.proto',
-  package='sdk',
+  package='pkg',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\x10tech_share.proto\x12\x03sdk\"\x1b\n\rPersonRequest\x12\n\n\x02id\x18\x01 \x01(\x05\"\x1e\n\rPeopleRequest\x12\r\n\x05limit\x18\x01 \x01(\x05\"-\n\x0ePeopleResponse\x12\x1b\n\x06people\x18\x01 \x03(\x0b\x32\x0b.sdk.Person\"A\n\x06Person\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x1d\n\x07\x61\x64\x64ress\x18\x03 \x01(\x0b\x32\x0c.sdk.Address\"(\n\x07\x41\x64\x64ress\x12\x0c\n\x04\x63ity\x18\x01 \x01(\t\x12\x0f\n\x07\x63ountry\x18\x02 \x01(\t2v\n\tTechShare\x12.\n\tGetPerson\x12\x12.sdk.PeopleRequest\x1a\x0b.sdk.Person\"\x00\x12\x39\n\nListPeople\x12\x12.sdk.PeopleRequest\x1a\x13.sdk.PeopleResponse\"\x00\x30\x01\x62\x06proto3')
+  serialized_pb=_b('\n\x10tech_share.proto\x12\x03pkg\"\x1b\n\rPersonRequest\x12\n\n\x02id\x18\x01 \x01(\x05\"\x1e\n\rPeopleRequest\x12\r\n\x05limit\x18\x01 \x01(\x05\"-\n\x0ePeopleResponse\x12\x1b\n\x06people\x18\x01 \x03(\x0b\x32\x0b.pkg.Person\"A\n\x06Person\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x1d\n\x07\x61\x64\x64ress\x18\x03 \x01(\x0b\x32\x0c.pkg.Address\"(\n\x07\x41\x64\x64ress\x12\x0c\n\x04\x63ity\x18\x01 \x01(\t\x12\x0f\n\x07\x63ountry\x18\x02 \x01(\t2v\n\tTechShare\x12.\n\tGetPerson\x12\x12.pkg.PeopleRequest\x1a\x0b.pkg.Person\"\x00\x12\x39\n\nListPeople\x12\x12.pkg.PeopleRequest\x1a\x13.pkg.PeopleResponse\"\x00\x30\x01\x62\x06proto3')
 )
 
 
@@ -27,13 +27,13 @@ DESCRIPTOR = _descriptor.FileDescriptor(
 
 _PERSONREQUEST = _descriptor.Descriptor(
   name='PersonRequest',
-  full_name='sdk.PersonRequest',
+  full_name='pkg.PersonRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='id', full_name='sdk.PersonRequest.id', index=0,
+      name='id', full_name='pkg.PersonRequest.id', index=0,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -58,13 +58,13 @@ _PERSONREQUEST = _descriptor.Descriptor(
 
 _PEOPLEREQUEST = _descriptor.Descriptor(
   name='PeopleRequest',
-  full_name='sdk.PeopleRequest',
+  full_name='pkg.PeopleRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='limit', full_name='sdk.PeopleRequest.limit', index=0,
+      name='limit', full_name='pkg.PeopleRequest.limit', index=0,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -89,13 +89,13 @@ _PEOPLEREQUEST = _descriptor.Descriptor(
 
 _PEOPLERESPONSE = _descriptor.Descriptor(
   name='PeopleResponse',
-  full_name='sdk.PeopleResponse',
+  full_name='pkg.PeopleResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='people', full_name='sdk.PeopleResponse.people', index=0,
+      name='people', full_name='pkg.PeopleResponse.people', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -120,27 +120,27 @@ _PEOPLERESPONSE = _descriptor.Descriptor(
 
 _PERSON = _descriptor.Descriptor(
   name='Person',
-  full_name='sdk.Person',
+  full_name='pkg.Person',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='id', full_name='sdk.Person.id', index=0,
+      name='id', full_name='pkg.Person.id', index=0,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='name', full_name='sdk.Person.name', index=1,
+      name='name', full_name='pkg.Person.name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='address', full_name='sdk.Person.address', index=2,
+      name='address', full_name='pkg.Person.address', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -165,20 +165,20 @@ _PERSON = _descriptor.Descriptor(
 
 _ADDRESS = _descriptor.Descriptor(
   name='Address',
-  full_name='sdk.Address',
+  full_name='pkg.Address',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='city', full_name='sdk.Address.city', index=0,
+      name='city', full_name='pkg.Address.city', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='country', full_name='sdk.Address.country', index=1,
+      name='country', full_name='pkg.Address.country', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -212,35 +212,35 @@ _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 PersonRequest = _reflection.GeneratedProtocolMessageType('PersonRequest', (_message.Message,), dict(
   DESCRIPTOR = _PERSONREQUEST,
   __module__ = 'tech_share_pb2'
-  # @@protoc_insertion_point(class_scope:sdk.PersonRequest)
+  # @@protoc_insertion_point(class_scope:pkg.PersonRequest)
   ))
 _sym_db.RegisterMessage(PersonRequest)
 
 PeopleRequest = _reflection.GeneratedProtocolMessageType('PeopleRequest', (_message.Message,), dict(
   DESCRIPTOR = _PEOPLEREQUEST,
   __module__ = 'tech_share_pb2'
-  # @@protoc_insertion_point(class_scope:sdk.PeopleRequest)
+  # @@protoc_insertion_point(class_scope:pkg.PeopleRequest)
   ))
 _sym_db.RegisterMessage(PeopleRequest)
 
 PeopleResponse = _reflection.GeneratedProtocolMessageType('PeopleResponse', (_message.Message,), dict(
   DESCRIPTOR = _PEOPLERESPONSE,
   __module__ = 'tech_share_pb2'
-  # @@protoc_insertion_point(class_scope:sdk.PeopleResponse)
+  # @@protoc_insertion_point(class_scope:pkg.PeopleResponse)
   ))
 _sym_db.RegisterMessage(PeopleResponse)
 
 Person = _reflection.GeneratedProtocolMessageType('Person', (_message.Message,), dict(
   DESCRIPTOR = _PERSON,
   __module__ = 'tech_share_pb2'
-  # @@protoc_insertion_point(class_scope:sdk.Person)
+  # @@protoc_insertion_point(class_scope:pkg.Person)
   ))
 _sym_db.RegisterMessage(Person)
 
 Address = _reflection.GeneratedProtocolMessageType('Address', (_message.Message,), dict(
   DESCRIPTOR = _ADDRESS,
   __module__ = 'tech_share_pb2'
-  # @@protoc_insertion_point(class_scope:sdk.Address)
+  # @@protoc_insertion_point(class_scope:pkg.Address)
   ))
 _sym_db.RegisterMessage(Address)
 
@@ -248,7 +248,7 @@ _sym_db.RegisterMessage(Address)
 
 _TECHSHARE = _descriptor.ServiceDescriptor(
   name='TechShare',
-  full_name='sdk.TechShare',
+  full_name='pkg.TechShare',
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
@@ -257,7 +257,7 @@ _TECHSHARE = _descriptor.ServiceDescriptor(
   methods=[
   _descriptor.MethodDescriptor(
     name='GetPerson',
-    full_name='sdk.TechShare.GetPerson',
+    full_name='pkg.TechShare.GetPerson',
     index=0,
     containing_service=None,
     input_type=_PEOPLEREQUEST,
@@ -266,7 +266,7 @@ _TECHSHARE = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='ListPeople',
-    full_name='sdk.TechShare.ListPeople',
+    full_name='pkg.TechShare.ListPeople',
     index=1,
     containing_service=None,
     input_type=_PEOPLEREQUEST,

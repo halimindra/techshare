@@ -1,10 +1,10 @@
 syntax = "proto3";
 
-package sdk;
+package pkg;
 
 service TechShare {
     rpc GetPerson(PersonRequest) returns (Person) {}
-    rpc ListPeople(PeopleRequest) returns (stream PeopleResponse) {}
+    rpc ListPeople(PeopleRequest) returns (stream Person) {}
 }
 
 message PersonRequest {
@@ -13,10 +13,6 @@ message PersonRequest {
 
 message PeopleRequest {
     int64 limit = 1;
-}
-
-message PeopleResponse {
-    repeated Person people = 1;
 }
 
 message Person {

@@ -8,7 +8,7 @@ go get -u github.com/golang/protobuf/protoc-gen-go
 pip install grpcio-tools
 
 # To generate python client, go to `protos` folder and run this command:
-python3.6 -m grpc_tools.protoc -I. --python_out=../sdk --grpc_python_out=../sdk tech_share.proto
+python3.6 -m grpc_tools.protoc -I. --python_out=../pkg --grpc_python_out=../pkg tech_share.proto
 
 # To generate go client, go to `protos` folder and run this command:
-protoc -I.  --go_out=plugins=grpc:../sdk tech_share.proto
+protoc -I.  --go_out=plugins=grpc:../pkg tech_share.proto

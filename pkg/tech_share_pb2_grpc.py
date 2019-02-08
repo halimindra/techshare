@@ -15,12 +15,12 @@ class TechShareStub(object):
       channel: A grpc.Channel.
     """
     self.GetPerson = channel.unary_unary(
-        '/sdk.TechShare/GetPerson',
+        '/pkg.TechShare/GetPerson',
         request_serializer=tech__share__pb2.PeopleRequest.SerializeToString,
         response_deserializer=tech__share__pb2.Person.FromString,
         )
     self.ListPeople = channel.unary_stream(
-        '/sdk.TechShare/ListPeople',
+        '/pkg.TechShare/ListPeople',
         request_serializer=tech__share__pb2.PeopleRequest.SerializeToString,
         response_deserializer=tech__share__pb2.PeopleResponse.FromString,
         )
@@ -59,5 +59,5 @@ def add_TechShareServicer_to_server(servicer, server):
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(
-      'sdk.TechShare', rpc_method_handlers)
+      'pkg.TechShare', rpc_method_handlers)
   server.add_generic_rpc_handlers((generic_handler,))
