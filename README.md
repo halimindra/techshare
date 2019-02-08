@@ -1,14 +1,42 @@
-# Install protoc compiler
+## Installation
+### Install protoc compiler
 download from https://github.com/protocolbuffers/protobuf/releases
 
-# Install compiler for go
+### Install compiler for go
+```
 go get -u github.com/golang/protobuf/protoc-gen-go
+```
 
-# Install compiler for python
+### Install compiler for python
+```
 pip3 install grpcio-tools
+```
 
-# To generate python client, go to `proto` folder and run this command:
+## Command
+### To generate python client, go to `proto` folder and run this command:
+```
 python3.6 -m grpc_tools.protoc -I. --python_out=../pkg --grpc_python_out=../pkg tech_share.proto
+```
 
-# To generate go client, go to `proto` folder and run this command:
+### To generate go client, go to `proto` folder and run this command:
+```
 protoc -I.  --go_out=plugins=grpc:../pkg tech_share.proto
+```
+
+## Running Server
+```
+go run main.go -mode=<mode> -port=<optional>
+```
+Available options
+-mode: rest, grpc
+-port: <port number>
+
+###  Sample Run REST server
+```
+go run main.go -mode=rest
+```
+
+### Running gRPC server in specific port
+```
+go run main.go -mode=grpc -port=11000
+```
