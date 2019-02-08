@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='pkg',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\x10tech_share.proto\x12\x03pkg\"\x1b\n\rPersonRequest\x12\n\n\x02id\x18\x01 \x01(\x05\"\x1e\n\rPeopleRequest\x12\r\n\x05limit\x18\x01 \x01(\x05\"-\n\x0ePeopleResponse\x12\x1b\n\x06people\x18\x01 \x03(\x0b\x32\x0b.pkg.Person\"A\n\x06Person\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x1d\n\x07\x61\x64\x64ress\x18\x03 \x01(\x0b\x32\x0c.pkg.Address\"(\n\x07\x41\x64\x64ress\x12\x0c\n\x04\x63ity\x18\x01 \x01(\t\x12\x0f\n\x07\x63ountry\x18\x02 \x01(\t2v\n\tTechShare\x12.\n\tGetPerson\x12\x12.pkg.PeopleRequest\x1a\x0b.pkg.Person\"\x00\x12\x39\n\nListPeople\x12\x12.pkg.PeopleRequest\x1a\x13.pkg.PeopleResponse\"\x00\x30\x01\x62\x06proto3')
+  serialized_pb=_b('\n\x10tech_share.proto\x12\x03pkg\"\x1b\n\rPersonRequest\x12\n\n\x02id\x18\x01 \x01(\x03\"\x1e\n\rPeopleRequest\x12\r\n\x05limit\x18\x01 \x01(\x03\"A\n\x06Person\x12\n\n\x02id\x18\x01 \x01(\x03\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x1d\n\x07\x61\x64\x64ress\x18\x03 \x01(\x0b\x32\x0c.pkg.Address\"(\n\x07\x41\x64\x64ress\x12\x0c\n\x04\x63ity\x18\x01 \x01(\t\x12\x0f\n\x07\x63ountry\x18\x02 \x01(\t2n\n\tTechShare\x12.\n\tGetPerson\x12\x12.pkg.PersonRequest\x1a\x0b.pkg.Person\"\x00\x12\x31\n\nListPeople\x12\x12.pkg.PeopleRequest\x1a\x0b.pkg.Person\"\x00\x30\x01\x62\x06proto3')
 )
 
 
@@ -34,7 +34,7 @@ _PERSONREQUEST = _descriptor.Descriptor(
   fields=[
     _descriptor.FieldDescriptor(
       name='id', full_name='pkg.PersonRequest.id', index=0,
-      number=1, type=5, cpp_type=1, label=1,
+      number=1, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -65,7 +65,7 @@ _PEOPLEREQUEST = _descriptor.Descriptor(
   fields=[
     _descriptor.FieldDescriptor(
       name='limit', full_name='pkg.PeopleRequest.limit', index=0,
-      number=1, type=5, cpp_type=1, label=1,
+      number=1, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -87,37 +87,6 @@ _PEOPLEREQUEST = _descriptor.Descriptor(
 )
 
 
-_PEOPLERESPONSE = _descriptor.Descriptor(
-  name='PeopleResponse',
-  full_name='pkg.PeopleResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='people', full_name='pkg.PeopleResponse.people', index=0,
-      number=1, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=86,
-  serialized_end=131,
-)
-
-
 _PERSON = _descriptor.Descriptor(
   name='Person',
   full_name='pkg.Person',
@@ -127,7 +96,7 @@ _PERSON = _descriptor.Descriptor(
   fields=[
     _descriptor.FieldDescriptor(
       name='id', full_name='pkg.Person.id', index=0,
-      number=1, type=5, cpp_type=1, label=1,
+      number=1, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -158,8 +127,8 @@ _PERSON = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=133,
-  serialized_end=198,
+  serialized_start=86,
+  serialized_end=151,
 )
 
 
@@ -196,15 +165,13 @@ _ADDRESS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=200,
-  serialized_end=240,
+  serialized_start=153,
+  serialized_end=193,
 )
 
-_PEOPLERESPONSE.fields_by_name['people'].message_type = _PERSON
 _PERSON.fields_by_name['address'].message_type = _ADDRESS
 DESCRIPTOR.message_types_by_name['PersonRequest'] = _PERSONREQUEST
 DESCRIPTOR.message_types_by_name['PeopleRequest'] = _PEOPLEREQUEST
-DESCRIPTOR.message_types_by_name['PeopleResponse'] = _PEOPLERESPONSE
 DESCRIPTOR.message_types_by_name['Person'] = _PERSON
 DESCRIPTOR.message_types_by_name['Address'] = _ADDRESS
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
@@ -222,13 +189,6 @@ PeopleRequest = _reflection.GeneratedProtocolMessageType('PeopleRequest', (_mess
   # @@protoc_insertion_point(class_scope:pkg.PeopleRequest)
   ))
 _sym_db.RegisterMessage(PeopleRequest)
-
-PeopleResponse = _reflection.GeneratedProtocolMessageType('PeopleResponse', (_message.Message,), dict(
-  DESCRIPTOR = _PEOPLERESPONSE,
-  __module__ = 'tech_share_pb2'
-  # @@protoc_insertion_point(class_scope:pkg.PeopleResponse)
-  ))
-_sym_db.RegisterMessage(PeopleResponse)
 
 Person = _reflection.GeneratedProtocolMessageType('Person', (_message.Message,), dict(
   DESCRIPTOR = _PERSON,
@@ -252,15 +212,15 @@ _TECHSHARE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=242,
-  serialized_end=360,
+  serialized_start=195,
+  serialized_end=305,
   methods=[
   _descriptor.MethodDescriptor(
     name='GetPerson',
     full_name='pkg.TechShare.GetPerson',
     index=0,
     containing_service=None,
-    input_type=_PEOPLEREQUEST,
+    input_type=_PERSONREQUEST,
     output_type=_PERSON,
     serialized_options=None,
   ),
@@ -270,7 +230,7 @@ _TECHSHARE = _descriptor.ServiceDescriptor(
     index=1,
     containing_service=None,
     input_type=_PEOPLEREQUEST,
-    output_type=_PEOPLERESPONSE,
+    output_type=_PERSON,
     serialized_options=None,
   ),
 ])

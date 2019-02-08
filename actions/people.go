@@ -29,8 +29,14 @@ func GetPerson(w http.ResponseWriter, r *http.Request) {
 }
 
 func GetPeople(w http.ResponseWriter, r *http.Request) {
+	limit, err := strconv.Atoi(r.URL.Query().Get("limit"))
+	if err != nil {
+		log.Print(err)
+		limit = 10000000
+	}
+
 	pr := repository.NewPeople()
-	people, err := pr.FindAll(1000000)
+	people, err := pr.FindAll(int64(limit))
 	if err != nil {
 		log.Print(err)
 	}

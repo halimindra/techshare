@@ -6,25 +6,23 @@ import (
 	"log"
 	"net"
 	"net/http"
-	"os"
 
 	"github.com/gorilla/mux"
 	"google.golang.org/grpc"
 	"orami.com/techshare/actions"
-	"orami.com/techshare/protos"
 	pb "orami.com/techshare/pkg"
+	"orami.com/techshare/proto"
 )
 
 var (
+	mode = flag.String("mode", "rest", "Server mode, options: rest, grpc")
 	port = flag.Int("port", 10000, "The server port")
 )
 
 func main() {
-	if len(os.Args) < 2 {
-		log.Fatal("Invalid argument")
-	}
+	flag.Parse()
 
-	switch os.Args[1] {
+	switch *mode {
 	case "rest":
 		log.Println("Starting Rest API Server")
 
@@ -32,10 +30,9 @@ func main() {
 		router.HandleFunc("/people", actions.GetPeople).Methods("GET")
 		router.HandleFunc("/people/{id}", actions.GetPerson).Methods("GET")
 
-		log.Fatal(http.ListenAndServe(":8000", router))
+		log.Fatal(http.ListenAndServe(fmt.Sprintf(":%d", *port), router))
 	case "grpc":
 		log.Println("Starting gRPC Server")
-		flag.Parse()
 
 		lis, err := net.Listen("tcp", fmt.Sprintf(":%d", *port))
 		if err != nil {
@@ -43,7 +40,7 @@ func main() {
 		}
 
 		grpcServer := grpc.NewServer()
-		techShareServer := protos.Server{}
+		techShareServer := proto.Server{}
 		pb.RegisterTechShareServer(grpcServer, techShareServer)
 		grpcServer.Serve(lis)
 	default:
