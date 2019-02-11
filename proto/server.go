@@ -31,7 +31,7 @@ func (s Server) GetPerson(c context.Context, r *pkg.PersonRequest) (*pkg.Person,
 
 func (s Server) ListPeople(r *pkg.PeopleRequest, stream pkg.TechShare_ListPeopleServer) error {
 	pr := repository.NewPeople()
-	people, err := pr.FindAll(1000000)
+	people, err := pr.FindAll(r.GetLimit())
 	if err != nil {
 		return err
 	}

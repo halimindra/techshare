@@ -32,7 +32,7 @@ func GetPeople(w http.ResponseWriter, r *http.Request) {
 	limit, err := strconv.Atoi(r.URL.Query().Get("limit"))
 	if err != nil {
 		log.Print(err)
-		limit = 10000000
+		limit = 10000
 	}
 
 	pr := repository.NewPeople()
